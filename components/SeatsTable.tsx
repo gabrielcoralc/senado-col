@@ -7,18 +7,21 @@ import { Trophy } from 'lucide-react';
 interface SeatsTableProps {
   asignaciones: SeatAllocation[];
   cifraRepartidora: number;
+  totalCurules?: number;
+  titulo?: string;
+  descripcion?: string;
 }
 
-export default function SeatsTable({ asignaciones, cifraRepartidora }: SeatsTableProps) {
+export default function SeatsTable({ asignaciones, cifraRepartidora, totalCurules = 100, titulo = 'Proyección de Curules del Senado', descripcion = "Cálculo según Método D'Hondt - 100 curules disponibles (Circunscripción Nacional)" }: SeatsTableProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-4">
         <h2 className="text-2xl font-bold text-white flex items-center gap-2">
           <Trophy className="h-6 w-6" />
-          Proyección de Curules del Senado
+          {titulo}
         </h2>
         <p className="text-blue-100 text-sm mt-1">
-          Cálculo según Método D&apos;Hondt - 100 curules disponibles (Circunscripción Nacional)
+          {descripcion}
         </p>
       </div>
 
@@ -112,7 +115,7 @@ export default function SeatsTable({ asignaciones, cifraRepartidora }: SeatsTabl
                 </td>
                 <td className="px-6 py-3 text-right">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-blue-600 text-white">
-                    {asignaciones.reduce((sum, p) => sum + p.curules, 0)} / 100
+                    {asignaciones.reduce((sum, p) => sum + p.curules, 0)} / {totalCurules}
                   </span>
                 </td>
                 <td></td>
