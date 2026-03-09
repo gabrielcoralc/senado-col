@@ -21,9 +21,10 @@ export function calcularUmbral(votosValidos: number): number {
 export function aplicarMetodoDHondt(
   partidos: PartyVotes[],
   curulesDisponibles: number,
-  votosValidos: number
+  votosValidos: number,
+  useThreshold: boolean = true
 ): SeatAllocation[] {
-  const umbral = calcularUmbral(votosValidos);
+  const umbral = useThreshold ? calcularUmbral(votosValidos) : 0;
   
   const partidosElegibles = partidos.filter(p => p.vot >= umbral);
   
