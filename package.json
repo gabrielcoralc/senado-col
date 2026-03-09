@@ -1,0 +1,28 @@
+{
+  "name": "senado-colombia-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Visualización en tiempo real de las elecciones al Senado de Colombia 2026 con cálculo de asignación de curules según método D'Hondt",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^14.2.3",
+    "lucide-react": "^0.344.0",
+    "recharts": "^2.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17"
+  }
+}
